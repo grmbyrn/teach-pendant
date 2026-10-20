@@ -1,0 +1,18 @@
+{
+  /* ts-jest needs CommonJS output and classic node resolution, which is
+     the one place our test pipeline differs from the Vite build.
+
+     node10 resolution is deprecated in TS 6, but CommonJS output requires it
+     and ts-jest has no CJS path without it. Scoped to the test config only -
+     the app build (tsconfig.json) stays on modern "bundler" resolution.
+     Revisit when ts-jest supports ESM cleanly, or when we move to Vitest. */
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node10",
+    "ignoreDeprecations": "6.0",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": false,
+    "noEmit": false
+  }
+}

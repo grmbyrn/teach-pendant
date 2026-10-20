@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Language + module system. "bundler" resolution lets us import
+       without file extensions and matches how Vite actually resolves. */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+
+    /* Vite compiles each file on its own and never type-checks,
+       so tsc is only ever used as a checker here. */
+    "noEmit": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+
+    /* Strictness. The extras beyond "strict" are the ones that catch
+       real bugs in streaming code: undefined array reads and
+       unchecked switch fallthrough. */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+
+    "types": ["jest", "@testing-library/jest-dom"],
+    "paths": {
+      "@core/*": ["./src/core/*"],
+      "@packages/*": ["./src/packages/*"],
+      "@test/*": ["./src/test/*"]
+    }
+  },
+  "include": ["src"]
+}

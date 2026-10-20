@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    /* Config files run in Node, not in the browser, so they get
+       Node's globals and no DOM lib. */
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "types": ["node"]
+  },
+  "include": ["vite.config.ts"]
+}

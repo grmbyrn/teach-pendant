@@ -1,0 +1,36 @@
+/*
+ * Global reset. Everything else is styled with makeStyles (Griffel) inside
+ * components; this file only sets up the page itself.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  /* The app is exactly one screen. Nothing should ever scroll the page -
+     a stray scroll on a handheld panel hides the status bar. */
+  overflow: hidden;
+}
+
+body {
+  /* Kill the 300ms tap delay and double-tap zoom: taps must feel immediate. */
+  touch-action: manipulation;
+  /* Operators drag a gloved finger across the screen; text selection
+     highlights would appear constantly and mean nothing to them. */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#root {
+  height: 100%;
+  /* On the device the frame is exactly the screen, so centring does nothing.
+     On a desktop browser during development it keeps the 800x480 panel in
+     view instead of pinned to the corner. */
+  display: grid;
+  place-items: center;
+}

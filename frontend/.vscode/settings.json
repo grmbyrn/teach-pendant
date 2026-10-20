@@ -1,0 +1,7 @@
+{
+  // Use the project's own TypeScript (6.0.3) rather than the one bundled with
+  // the editor. Without this the editor can report errors that `npm run
+  // typecheck` does not, and miss ones that it does.
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
